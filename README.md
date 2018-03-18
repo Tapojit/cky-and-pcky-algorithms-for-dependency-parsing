@@ -1,9 +1,9 @@
-# CKY and PCKY algorithms for sentence parsing
-Using CKY and PCKY algorithm to obtain grammatical sentence parses.
+# CKY and PCKY algorithms for dependency parsing
+Using CKY and PCKY algorithm to obtain dependency parses of phrases/sentences, which is only possible if they obey given CFG rules.
 
 ## CKY
 
-The **Cocke–Kasami–Younger(CKY)** algorithm uses *Context Free Grammar(CFG)* rules and lexicon to obtain a legal parse of a given sentence.
+The **Cocke–Kasami–Younger(CKY)** algorithm uses *Context Free Grammar(CFG)* rules and lexicon to obtain a legal dependency parse of a given sentence/phrase. 
 If a sentence has no legal parse, either the sentence is ungrammatical or set of CFG rules is not adequate. Below is an array
 of tuples containing CFG rules and a dictionary of lexicon.
 ```
