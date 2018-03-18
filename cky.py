@@ -1,6 +1,5 @@
 from pprint import pprint
 
-# The productions rules have to be binarized.
 
 grammar_text = """
 S -> NP VP
@@ -27,7 +26,7 @@ lexicon = {
     'Det': set(['the','a']),
 }
 
-# Process the grammar rules.  You should not have to change this.
+# Processing the grammar rules.
 grammar_rules = []
 for line in grammar_text.strip().split("\n"):
     if not line.strip(): continue
@@ -68,7 +67,6 @@ def cky_acceptance(sentence):
     # So sentence[3:4] is the 3rd word, and sentence[3:6] is a 3-length phrase,
     # at indexes 3, 4, and 5.
     # Each cell would then contain a list of possible nonterminal symbols for that span.
-    # If you want, feel free to use a totally different data structure.
     N = len(sentence)
     cells = {}
     for i in range(N):
@@ -97,7 +95,7 @@ def cky_acceptance(sentence):
             
                 
 
-    # TODO replace the below with an implementation
+    
     pprint(cells)
     res=False
     if(len(cells[(0,N)])!=0):
@@ -140,7 +138,6 @@ def cky_parse(sentence):
     res=backpointer(cells, [], (0,N))
     if(len(res)==0):
         return None
-    # TODO replace the below with an implementation
     return res
 def backpointer(dict,list,tuple):
     if(len(dict[tuple])==0):
@@ -155,8 +152,7 @@ def backpointer(dict,list,tuple):
     list.append(list2)
     
     return list
-## some examples of calling these things...
-## you probably want to call only one sentence at a time to help debug more easily.
+
 
 # print cky_parse(['a', 'cats', 'attack', 'the', 'dog'])
 # pprint( cky_parse(['the','cat','attacked','the','food']))
