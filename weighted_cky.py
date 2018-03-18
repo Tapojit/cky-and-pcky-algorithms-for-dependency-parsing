@@ -90,7 +90,6 @@ def pcky_parse(sentence):
     res=backpointer(cells,backward, [], (0,N))
     if(len(res)==0):
         return None
-    # TODO replace the below with an implementation
     return res
 def backpointer(dict,back,list,tuple):
     if(not tuple in back):
