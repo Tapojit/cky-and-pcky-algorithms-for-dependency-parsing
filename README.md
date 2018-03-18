@@ -51,7 +51,7 @@ The function will return **None** for an ungrammatical sentence like *"the cat w
 
 ## PCKY
 
-**Probabilistic CKY** (PCKY for short) uses *CFG* and its probability distribution to obtain the most probable legal parse. The **pcfg_grammar_modified** file contains tab-separated *CFG* rules and their probability distributions. In the script **weighted_cky.py**, *PCKY* is implemented using **pcky_parse** function. 
+**Probabilistic CKY** (PCKY for short) uses *CFG* and its probability distribution to obtain the most probable legal parse. The **pcfg_grammar_modified** file contains tab-separated *CFG* rules and their probability distributions. In the script **weighted_cky.py**, *PCKY* is implemented using **pcky_parse** function.
 
 ### Running the function:
 
@@ -60,4 +60,16 @@ Just like the *cky_parse* function, use **bash** to *cd* into the repository dir
 ```
 python -c "from weighted_cky import pcky_parse; from pprint import pprint; pprint( pcky_parse(['book','the','flight','through','Houston']))"
 
+```
+Below is the most probable legal parse of the above phrase:
+
+```
+['S',
+ [['Verb', 'book'],
+  ['NP',
+   [['Det', 'the'],
+    ['Nominal',
+     [['Nominal', 'flight'],
+      ['PP', [['Prep', 'through'], ['NP', 'Houston']]]]]]]]]
+      
 ```
